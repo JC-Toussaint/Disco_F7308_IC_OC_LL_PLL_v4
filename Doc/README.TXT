@@ -1,0 +1,1 @@
+http://blog.martincowen.me.uk/improving-frequency-measurement-performance-by-factor-of-three-on-stm32-by-using-dma.html
