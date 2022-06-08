@@ -217,13 +217,13 @@ int main(void)
 	CH1_captureDone=0;
 
 	while (0 == CH1_captureDone) { ; }
-	TIM3->CCR1 = TIM3->CNT+CH1_diffCapture;
-
 	CH1_diffCapture = CH1_capture- last_CH1_capture;
 	last_CH1_capture = CH1_capture;
+	TIM3->CCR1 = TIM3->CNT+CH1_diffCapture;
 	CH1_captureDone=0;
 
 	fperiod = (float) CH1_diffCapture*ratio;
+	period = (uint32_t) (fperiod);
 
   /* USER CODE END 2 */
 
