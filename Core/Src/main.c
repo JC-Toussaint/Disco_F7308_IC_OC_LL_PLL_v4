@@ -196,9 +196,6 @@ int main(void)
 		Error_Handler();
     */
 
-	// LL_TIM_OC_Start_IT defined by user, see hereabove
-	LL_TIM_OC_Start_IT(TIM3, LL_TIM_CHANNEL_CH1);
-
 	// assumption check TIM2->ARR =0xffffffff
 	if (0xffffffff != TIM2->ARR)
 		Error_Handler();
@@ -225,6 +222,8 @@ int main(void)
 	fperiod = (float) CH1_diffCapture*ratio;
 	period = (uint32_t) (fperiod);
 
+	// LL_TIM_OC_Start_IT defined by user, see hereabove
+	LL_TIM_OC_Start_IT(TIM3, LL_TIM_CHANNEL_CH1);
   /* USER CODE END 2 */
 
   /* Infinite loop */
